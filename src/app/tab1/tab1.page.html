@@ -1,17 +1,238 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Notícias
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-content>
+    <ion-searchbar></ion-searchbar>
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/bolo de cenoura.png" alt="Bolo de cenoura">
+          <ion-card-subtitle>Sobremesa</ion-card-subtitle>
+          <ion-card-title>Bolo de cenoura</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          8 porções 40 minutos
+          <br> <br>
+          <ion-button color="warning" (click)="receita1()">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+    
+    
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/torta de frango.png" alt="Torta de frango">
+          <ion-card-subtitle>Lanche</ion-card-subtitle>
+          <ion-card-title>Torta de frango</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          15 porções 40 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+    
+    
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/salada.png" alt="Salada">
+          <ion-card-subtitle>Entrada</ion-card-subtitle>
+          <ion-card-title>Salada</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          6 porções 30 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>   
+      </ion-card>
+    
+    
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/beijinho.png" alt="Beijinho">
+          <ion-card-subtitle>Sobremesa</ion-card-subtitle>
+          <ion-card-title>Beijinho</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          50 porções 20 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+    
+      
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/torta de limao.png" alt="Torta de limão">
+          <ion-card-subtitle>Sobremesa</ion-card-subtitle>
+          <ion-card-title>Torta de limão</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          15 porções 40 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+   
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/macarrao a bolonesa.png" alt="Macarrão bolonesa">
+          <ion-card-subtitle>Prato principal</ion-card-subtitle>
+          <ion-card-title>Macarrão bolonesa</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          6 porções 45 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/salada de frutas.png" alt="Salada de frutas">
+          <ion-card-subtitle>Sobremesa</ion-card-subtitle>
+          <ion-card-title>Salada de frutas</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          6 porções 10 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/lasanha de frango.png" alt="Lasanha de frango">
+          <ion-card-subtitle>Prato principal</ion-card-subtitle>
+          <ion-card-title>Lasanha de frango</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          4 porções 45 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/brigadeiro.png" alt="Brigadeiro">
+          <ion-card-subtitle>Sobremesa</ion-card-subtitle>
+          <ion-card-title>Brigadeiro</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          30 porções 25 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/arroz com brocolis.png" alt="Arroz com brócolis">
+          <ion-card-subtitle>Prato principal</ion-card-subtitle>
+          <ion-card-title>Arroz com brócolis</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          6 porções 30 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/bolo de laranja.png" alt="Bolo de laranja">
+          <ion-card-subtitle>Sobremesa</ion-card-subtitle>
+          <ion-card-title>Bolo de laranja</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          12 porções 40 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/cural de milho.png" alt="Cural de milho">
+          <ion-card-subtitle>Sobremesa</ion-card-subtitle>
+          <ion-card-title>Cural de milho</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          14 porções 15 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+      
+
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/couve flor gratinada.png" alt="Couve-flor gratinada">
+          <ion-card-subtitle>Entrada</ion-card-subtitle>
+          <ion-card-title>Couve-flor gratinada</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          8 porções 30 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/batata recheada.png" alt="Batata recheada">
+          <ion-card-subtitle>Entrada</ion-card-subtitle>
+          <ion-card-title>Batata recheada</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          2 porções 30 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+        <ion-card-header>
+          <img class="imagem" src="assets/images/esfiha de carne.png" alt="Esfiha de carne">
+          <ion-card-subtitle>Lanche</ion-card-subtitle>
+          <ion-card-title>Esfiha de carne</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          30 porções 90 minutos
+          <br> <br>
+          <ion-button color="warning">Veja a receita</ion-button>
+        </ion-card-content>
+      </ion-card>
+   
+   
+ </ion-content>
+ 
 </ion-content>
