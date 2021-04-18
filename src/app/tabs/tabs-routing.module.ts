@@ -32,6 +32,14 @@ const routes: Routes = [
         loadChildren: () => import('../compra/compra.module').then(m => m.CompraPageModule)
       },
       {
+        path: 'busca',
+        loadChildren: () => import('../busca/busca.module').then(m => m.BuscaPageModule)
+      },
+      {
+        path: 'favoritos',
+        loadChildren: () => import('../favoritos/favoritos.module').then(m => m.FavoritosPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
