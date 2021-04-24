@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Notícias
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +9,12 @@
 <ion-content [fullscreen]="true">
   <ion-content>
     <ion-searchbar></ion-searchbar>
-      <ion-card>
+      <ion-list *ngIf="listaReceitas">
+        <ion-item *ngFor="let r of listaReceitas">
+          <app-card-receitas [receita]="r"></app-card-receitas>
+        </ion-item>
+      </ion-list>
+
         <ion-card-header>
           <img class="imagem" src="assets/images/bolo de cenoura.png" alt="Bolo de cenoura">
           <ion-card-subtitle>Sobremesa</ion-card-subtitle>
@@ -19,7 +24,7 @@
         <ion-card-content>
           8 porções 40 minutos
           <br> <br>
-          <ion-button color="warning" (click)="receita1()">Veja a receita</ion-button>
+          <ion-button color="warning" [routerLink]="['/receitas', 1]">Veja a receita</ion-button>
         </ion-card-content>
       </ion-card>
     

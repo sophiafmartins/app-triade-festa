@@ -1,0 +1,53 @@
+<ion-header [translucent]="true" *ngFor='let r of listaReceitas'>
+  <ion-toolbar *ngIf='receitaId === r.id'>
+     <ion-row>
+      <ion-buttons>
+        <ion-back-button slot="start">
+        </ion-back-button>
+      </ion-buttons>
+    
+      <ion-title>
+        {{r.titulo}}
+      </ion-title>
+     </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-content class="ion-padding" *ngFor='let r of listaReceitas'>
+    <div *ngIf='receitaId === r.id'>
+      <img class="imagem" [src]="'assets/images/receita'+(r.id)+'.png'" [alt]="r.nome">
+      <ion-fab vertical= "top" horizontal = "end">
+        <ion-fab-button size="small" color="warning">
+          <ion-icon name="heart-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <ion-card-subtitle>{{r.porcao}} porções</ion-card-subtitle> 
+      
+      <h2 style="color: brown;">Ingredientes:</h2>
+      <div *ngFor='let i of r.ingredientes'>
+        <div *ngIf='i.descricao.length'>
+          <h5 style="color: #ec7e49;">{{i.titulo}}</h5>
+
+          <div *ngFor='let d of i.descricao'>
+            <input type="checkbox">{{d}}<br>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="color: brown;">Modo de preparo:</h2>
+      <div *ngFor='let i of r.modoPreparo'>
+        <div *ngIf='i.descricao.length'>
+          <h5 style="color: #ec7e49;">{{i.titulo}}</h5>
+
+          <div *ngFor='let d of i.descricao'>
+            {{d}}
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </ion-content>
+
+</ion-content>
