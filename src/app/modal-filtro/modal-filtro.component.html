@@ -1,0 +1,43 @@
+<ion-header class="ion-padding">
+  <ion-toolbar>
+    <ion-title>FILTROS</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharFiltro()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>Filtrando por Tipo</h1>
+  <ion-row>
+    <ion-col *ngFor="let t of listaFiltroTipos">
+      <ion-item>
+        <ion-checkbox slot="start" [(ngModel)]="t.status" (ionChange)="obtendoFiltrosSelecionados()"></ion-checkbox>
+        <ion-label>{{t.tipo | uppercase}}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <h1>Filtrando por Categoria</h1>
+  <ion-row>
+    <ion-col>
+      <ion-item *ngFor="let c of listaFiltroCategorias">
+        <ion-checkbox slot="start" [(ngModel)]="c.status" (ionChange)="obtendoFiltrosSelecionados()"></ion-checkbox>
+        <ion-label>{{c.categoria | uppercase}}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <h1>Filtrando por Ingredientes</h1>
+  <ion-row>
+    <ion-col>
+      <ion-item *ngFor="let i of listaFiltroIngredientes">
+        <ion-checkbox slot="start" [(ngModel)]="i.status" (ionChange)="obtendoFiltrosSelecionados()"></ion-checkbox>
+        <ion-label>{{i.ingrediente | uppercase}}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+</ion-content>v

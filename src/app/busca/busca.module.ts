@@ -8,6 +8,9 @@ import { BuscaPageRoutingModule } from './busca-routing.module';
 
 import { BuscaPage } from './busca.page';
 
+import { ModalFiltroComponent } from '../modal-filtro/modal-filtro.component';
+import { CardReceitasComponent } from 'src/app/card-receitas/card-receitas.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +18,7 @@ import { BuscaPage } from './busca.page';
     IonicModule,
     BuscaPageRoutingModule
   ],
-  declarations: [BuscaPage]
+  declarations: [BuscaPage, ModalFiltroComponent, CardReceitasComponent],
+  entryComponents: [ModalFiltroComponent]
 })
 export class BuscaPageModule {}

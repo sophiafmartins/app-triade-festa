@@ -1,9 +1,45 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>busca</ion-title>
+    <ion-title>
+      BUSCA
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <ion-row>
+    <ion-col style="margin-left: 60%">
+      <ion-button fill="solid" style="margin-right: 8px" (click)="ordenarReceitas()">
+        A-Z
+      </ion-button>
+      
+      <ion-button (click)="irParaFiltro()">
+        <ion-icon slot="icon-only" name="filter"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-searchbar placeholder="Buscar Receitas" showCancelButton="always" [(ngModel)]="textoBusca" (ionChange)="buscando()" ></ion-searchbar>
+
+  <ion-list *ngIf="listaBusca.length; else vazioBusca">
+    <app-card-receitas *ngFor="let r of listaBusca" [receita]="r"></app-card-receitas>
+  </ion-list>
+
+  <ng-template #vazioBusca>
+    <ion-item>
+      <ion-label *ngIf="buscaAtivada">Nenhum resultado foi encontrado!!!</ion-label>
+    </ion-item>
+  </ng-template>
+
+
+  <ion-list *ngIf="!listaBusca.length && listaFiltrada.length; else vazioFiltro">
+    <app-card-receitas *ngFor="let r of listaFiltrada" [receita]="r"></app-card-receitas>
+  </ion-list>
+
+  <ng-template #vazioFiltro>
+    <ion-item>
+      <ion-label *ngIf="filtroAtivado && !listaBusca.length">Nenhum filtro foi encontrado!!!</ion-label>
+    </ion-item>
+  </ng-template>
 
 </ion-content>

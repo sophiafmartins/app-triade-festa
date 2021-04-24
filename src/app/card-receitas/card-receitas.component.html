@@ -1,0 +1,13 @@
+<ion-card>
+  <ion-card-header>
+    <img class="imagem" [src]="'assets/images/receita'+(receita.id)+'.png'" [alt]="receita.nome | json">
+    <ion-card-subtitle>{{receita.tipo | json}} | {{receita.categoria}}</ion-card-subtitle>
+    <ion-card-title>{{receita.nome | json}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{receita.porcoes | json}} porções {{receita.tempo | json}} minutos
+    <br> <br>
+    <ion-button color="warning" [routerLink]="['/receitas', receita.id]">Veja a receita</ion-button>
+  </ion-card-content>
+</ion-card>
