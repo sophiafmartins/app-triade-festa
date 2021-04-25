@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-buttons>
+        <ion-back-button slot="start"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Detalhes do Evento</ion-title>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div>
+    <ion-row>
+      <h3>Nome do evento:</h3>
+    </ion-row>
+    <ion-row>
+      <ion-label>{{evento.nomeEvento}}</ion-label>
+    </ion-row>
+    <ion-row>
+      <h3>Data do evento: </h3>
+    </ion-row>
+    <ion-row>
+      <ion-label>{{evento.dataEvento}}</ion-label>
+    </ion-row>
+    <ion-row>
+      <h3>Quantidade de convidados: </h3>
+    </ion-row>
+    <ion-row>
+      <ion-label>{{evento.qtdConvidados}}</ion-label>
+    </ion-row>
+          <ion-button expand="block" fill="clear" (click)="receitasAdicionadas()" >
+            <ion-icon class="icones" slot="icon-only" name="book-outline"></ion-icon>
+          </ion-button>
+  </div>  
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Minhas Receitas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let receita of receitasEvento">
+      <ion-row>
+        <ion-col size="4">
+          <div class="colCard">
+            <img [src]="receita.imgReceita" [routerLink]="urlReceita" />
+          </div>
+        </ion-col>
+        <ion-col >
+          <div class="colCard">
+            <h4 class="tituloCol">Titulo:</h4>
+            <h4 class="subtituloCol">{{receita.tituloReceita}}</h4>
+            <h4 class="tituloCol">Quantidade:</h4>
+            <h4 class="subtituloCol">{{receita.qtdReceita}}x</h4>
+          </div>
+        </ion-col>
+        <ion-col size="auto">
+          <div>
+            <ion-button size="small" fill="clear" (click)="removerReceita(receita)">
+              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+   </ion-list>
+</ion-content>

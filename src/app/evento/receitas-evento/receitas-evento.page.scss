@@ -1,0 +1,31 @@
+.container {
+    position: relative;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.container img {
+    position: absolute;
+    top: 0;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.tituloCol {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 7pt;
+    color: orange;
+    margin-bottom: 0em;
+}
+
+.subtituloCol {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 10pt;
+    color: brown;
+    margin-bottom: 1em;
+}

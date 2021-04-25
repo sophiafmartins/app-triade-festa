@@ -1,0 +1,28 @@
+.posicaoIcone {
+    font-size: 15pt;
+    padding-top: 15px;
+}
+
+.ml-auto {
+    background-color: red;
+    max-width: 500px;
+}
+
+.icones {
+    font-size: 15pt;
+    padding-left: 15px;
+}
+
+
+.textoCentral {
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+}
+
+.posicaoBotaoSemEventos {
+    position: relative;
+    top: 50%;
+}

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-buttons>
+        <ion-back-button slot="start"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Editar Evento</ion-title>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div><h3></h3>
+    <ion-row>
+      <h3>Nome do evento:</h3>
+    </ion-row>
+    <ion-row>
+      <ion-input type="text" placeholder="" [(ngModel)]="nomeEvento"></ion-input>
+    </ion-row>
+    <ion-row>
+      <h3>Data do evento: </h3>
+    </ion-row>
+    <ion-row>
+      <ion-datetime displayFormat="DD/MM/YYYY" [placeholder]="dataEvento" [(ngModel)]="dataEvento"></ion-datetime>
+    </ion-row>
+    <ion-row>
+      <h3>Quantidade de convidados: </h3>
+    </ion-row>
+    <ion-row>
+      <ion-input type="number" placeholder="" [(ngModel)]="qtdConvidados"></ion-input>
+    </ion-row>
+          <ion-button expand="block" fill="clear" (click)="editarEvento()">
+            <ion-icon class="icones" slot="icon-only" name="checkmark-outline"></ion-icon>
+          </ion-button>
+  </div>
+</ion-content>
