@@ -7,7 +7,7 @@
       </ion-buttons>
     
       <ion-title>
-        {{r.titulo}}
+        {{r.nome}}
       </ion-title>
      </ion-row>
   </ion-toolbar>
@@ -22,7 +22,7 @@
           <ion-icon name="heart-outline"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-      <ion-card-subtitle>{{r.porcao}} porções</ion-card-subtitle> 
+      <ion-card-subtitle>{{r.porcoes}} porções</ion-card-subtitle> 
       
       <h2 style="color: brown;">Ingredientes:</h2>
       <div *ngFor='let i of r.ingredientes'>
