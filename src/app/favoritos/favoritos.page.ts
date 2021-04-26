@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-type Categorias = 'entrada' | 'principal' | 'sobremesa' | 'lanche' | null;
-type Tipos = 'doce' | 'salgado' | null;
+type Categorias = 'Entrada' | 'Principal' | 'Sobremesa' | 'Lanche' | null;
+type Tipos = 'Doce' | 'Salgado' | null;
 
 interface Favorito {
   id: number,
@@ -23,30 +23,30 @@ export class FavoritosPage implements OnInit {
   public listaFavoritos: Favorito[] = [
     {
       id: 1,
-      nome: 'bolo de cenoura',
-      tipo: 'doce',
-      categoria: 'sobremesa',
+      nome: 'Bolo de cenoura',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
       porcoes: 8,
       tempo: 40,
-      ingredientes: ['óleo', 'cenoura', 'ovo', 'açúcar', 'farinha de trigo', 'fermento em pó', 'manteiga', 'chocolate em pó', 'leite']
+      ingredientes: ['Óleo', 'Cenoura', 'Ovo', 'Açúcar', 'Farinha de trigo', 'Fermento em pó', 'Manteiga', 'Chocolate em pó', 'Leite']
     },
     {
-      id: 2,
-      nome: 'beijinho',
-      tipo: 'doce',
-      categoria: 'sobremesa',
+      id: 4,
+      nome: 'Beijinho',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
       porcoes: 50,
       tempo: 20,
-      ingredientes: ['leite condensado', 'manteiga', 'coco ralado', 'açúcar cristal', 'cravos-da-índia']
+      ingredientes: ['Leite condensado', 'Manteiga', 'Coco ralado', 'Açúcar', 'Cravos-da-índia']
     },
     {
-      id: 3,
-      nome: 'brigadeiro',
-      tipo: 'doce',
-      categoria: 'sobremesa',
+      id: 9,
+      nome: 'Brigadeiro',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
       porcoes: 30,
       tempo: 25,
-      ingredientes: ['leite condensado', 'margarina', 'chocolate em pó', 'achocolatado', 'chocolate granulado']
+      ingredientes: ['Leite condensado', 'Margarina', 'Chocolate em pó', 'Achocolatado', 'Chocolate granulado']
     }
   ];
 

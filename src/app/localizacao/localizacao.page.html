@@ -8,4 +8,22 @@
 
 <ion-content>
 
+  <ion-searchbar placeholder="Buscar lugares pelo CEP " [(ngModel)]="cepDigitado" (ionChange)="buscandoMapa()" showCancelButton="always"></ion-searchbar>
+
+  <div *ngIf="localizacaoAtivada; else vazio">
+    <img style="margin-top: 25px" [src]="imgMapa" alt="">
+  </div>
+  
+  <ng-template #vazio>
+    <ion-row style="margin-left: 36%;
+    margin-top: 40%;" class="ion-align-items-center">
+      <ion-icon name="location-sharp"></ion-icon>
+    </ion-row>
+    <ion-row>
+      <ion-text color="medium" style="margin-left: 10%;">
+        <p>Localize mercados, lojas de conveniência, etc</p>
+      </ion-text>
+    </ion-row>
+  </ng-template>
+
 </ion-content>

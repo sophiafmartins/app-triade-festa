@@ -1,12 +1,14 @@
-<ion-header class="ion-padding">
+<ion-header>
   <ion-toolbar>
-    <ion-title>FAVORITOS</ion-title>
+    <ion-title>
+      Favoritos
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
 
-  <h2>LISTA DE FAVORITOS</h2>
+  <h2>Lista de Favoritos</h2>
 
   <div>
     <ion-list *ngIf="listaFavoritos.length; else vazioFavoritas">
@@ -28,8 +30,8 @@
 
       <ion-row>
         <ion-col class="ion-align-items-center" style="margin-left: 20%">
-          <ion-button routerLink="/busca">
-            ADICIONAR FAVORITOS
+          <ion-button routerLink="/tabs/busca">
+            Adicionar Favoritos
           </ion-button>
         </ion-col>
       </ion-row>

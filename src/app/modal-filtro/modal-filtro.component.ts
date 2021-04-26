@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
-type Categorias = 'entrada' | 'principal' | 'sobremesa' | 'lanche' | null;
-type Tipos = 'doce' | 'salgado' | null;
+type Categorias = 'Entrada' | 'Principal' | 'Sobremesa' | 'Lanche' | null;
+type Tipos = 'Doce' | 'Salgado' | null;
 
 interface filtroTipos {
   tipo: Tipos,
@@ -35,95 +35,95 @@ export class ModalFiltroComponent implements OnInit {
   public listaFiltrosSelecionados: filtros[] = [];
   public listaFiltroTipos: filtroTipos[] = [
     {
-      tipo: 'doce',
+      tipo: 'Doce',
       status: false
     },
     {
-      tipo: 'salgado',
+      tipo: 'Salgado',
       status: false
     }
   ];
 
   public listaFiltroCategorias: filtroCategorias[] = [
     {
-      categoria: 'entrada',
+      categoria: 'Entrada',
       status: false
     },
     {
-      categoria: 'principal',
+      categoria: 'Principal',
       status: false
     },
     {
-      categoria: 'sobremesa',
+      categoria: 'Sobremesa',
       status: false
     },
     {
-      categoria: 'lanche',
+      categoria: 'Lanche',
       status: false
     }
   ];
 
   public listaFiltroIngredientes: filtroIngredientes[] = [
     {
-      ingrediente: 'cenoura',
+      ingrediente: 'Cenoura',
       status: false
     },
     {
-      ingrediente: 'chocolate',
+      ingrediente: 'Chocolate',
       status: false
     },
     {
-      ingrediente: 'frango',
+      ingrediente: 'Frango',
       status: false
     },
     {
-      ingrediente: 'carne',
+      ingrediente: 'Carne',
       status: false
     },
     {
-      ingrediente: 'coco',
+      ingrediente: 'Coco',
       status: false
     },
     {
-      ingrediente: 'leite condensado',
+      ingrediente: 'Leite condensado',
       status: false
     },
     {
-      ingrediente: 'tomate',
+      ingrediente: 'Tomate',
       status: false
     },
     {
-      ingrediente: 'arroz',
+      ingrediente: 'Arroz',
       status: false
     },
     {
-      ingrediente: 'brócolis',
+      ingrediente: 'Brócolis',
       status: false
     },
     {
-      ingrediente: 'limão',
+      ingrediente: 'Limão',
       status: false
     },
     {
-      ingrediente: 'couve-flor',
+      ingrediente: 'Couve-flor',
       status: false
     },
     {
-      ingrediente: 'laranja',
+      ingrediente: 'Laranja',
       status: false
     },{
-      ingrediente: 'frutas',
+      ingrediente: 'Frutas',
       status: false
     },{
-      ingrediente: 'milho',
+      ingrediente: 'Milho',
       status: false
     },
     {
-      ingrediente: 'batata',
+      ingrediente: 'Batata',
       status: false
     },
     {
-      ingrediente: 'mel',
+      ingrediente: 'Mel',
       status: false
     }
   ];

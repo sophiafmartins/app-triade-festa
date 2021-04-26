@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalFiltroComponent } from '../modal-filtro/modal-filtro.component';
 
-type Categorias = 'entrada' | 'principal' | 'sobremesa' | 'lanche' | null;
-type Tipos = 'doce' | 'salgado' | null;
+type Categorias = 'Entrada' | 'Principal' | 'Sobremesa' | 'Lanche' | null;
+type Tipos = 'Doce' | 'Salgado' | null;
 
 interface Receita {
   id: number,
@@ -30,139 +30,139 @@ export class BuscaPage implements OnInit {
   public listaReceitas: Receita[] = [
     {
       id: 1,
-      nome: 'bolo de cenoura',
-      tipo: 'doce',
-      categoria: 'sobremesa',
+      nome: 'Bolo de cenoura',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
       porcoes: 8,
       tempo: 40,
-      ingredientes: ['óleo', 'cenoura', 'ovo', 'açúcar', 'farinha de trigo', 'fermento em pó', 'manteiga', 'chocolate em pó', 'leite']
+      ingredientes: ['Óleo', 'Cenoura', 'Ovo', 'Açúcar', 'Farinha de trigo', 'Fermento em pó', 'Manteiga', 'Chocolate em pó', 'Leite']
     },
     {
       id: 2,
-      nome: 'beijinho',
-      tipo: 'doce',
-      categoria: 'sobremesa',
-      porcoes: 50,
-      tempo: 20,
-      ingredientes: ['leite condensado', 'manteiga', 'coco ralado', 'açúcar cristal', 'cravos-da-índia']
+      nome: 'Torta de frango',
+      tipo: 'Salgado',
+      categoria: 'Lanche',
+      porcoes: 15,
+      tempo: 40,
+      ingredientes: ['Frango', 'Caldo de galinha', 'Óleo', 'Alho', 'Cebola', 'Tomate', 'Ervilha', 'Sal', 'Pimenta-do-reino', 'Leite', 'Ovo', 'Farinha de trigo', 'Fermento em pó', 'Queijo']
     },
     {
       id: 3,
-      nome: 'brigadeiro',
-      tipo: 'doce',
-      categoria: 'sobremesa',
-      porcoes: 30,
-      tempo: 25,
-      ingredientes: ['leite condensado', 'margarina', 'chocolate em pó', 'achocolatado', 'chocolate granulado']
+      nome: 'Salada',
+      tipo: 'Salgado',
+      categoria: 'Entrada',
+      porcoes: 6,
+      tempo: 30,
+      ingredientes: ['Alface', 'Cenoura', 'Beterraba', 'Tomate', 'Cebola', 'Sal', 'Açúcar', 'Azeite', 'Vinagre']
     },
     {
       id: 4,
-      nome: 'torta de frango',
-      tipo: 'salgado',
-      categoria: 'lanche',
-      porcoes: 15,
-      tempo: 40,
-      ingredientes: ['frango', 'caldo de galinha', 'óleo', 'alho', 'cebola', 'tomate', 'ervilha', 'sal', 'pimenta-do-reino', 'leite', 'ovo', 'farinha de trigo', 'fermento em pó', 'queijo']
+      nome: 'Beijinho',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
+      porcoes: 50,
+      tempo: 20,
+      ingredientes: ['Leite condensado', 'Manteiga', 'Coco ralado', 'Açúcar', 'Cravos-da-índia']
     },
     {
       id: 5,
-      nome: 'lasanha de frango com queijo',
-      tipo: 'salgado',
-      categoria: 'principal',
-      porcoes: 4,
-      tempo: 45,
-      ingredientes: ['frango', 'queijo', 'presunto', 'massa de lasanha', 'requeijão', 'caldo de galinha', 'leite', 'creme de leite', 'farinha', 'manteiga', 'cebola']
+      nome: 'Torta de limão',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
+      porcoes: 15,
+      tempo: 40,
+      ingredientes: ['Biscoito de maisena', 'Margarina', 'Leite condensado', 'Creme de leite', 'Limão', 'Ovo', 'Açúcar']
     },
     {
       id: 6,
-      nome: 'esfiha de carne adaptada (receita turca)',
-      tipo: 'salgado',
-      categoria: 'lanche',
-      porcoes: 30,
-      tempo: 90,
-      ingredientes: ['fermento', 'açúcar', 'sal', 'leite', 'água', 'ovo', 'farinha de trigo', 'óleo', 'carne moída', 'tomate', 'cebola', 'alho', 'azeitona', 'noz moscada', 'salsinha', 'cebolinha', 'molho de pimenta', 'gema', 'gergelim']
+      nome: 'Macarrão bolonhesa',
+      tipo: 'Salgado',
+      categoria: 'Principal',
+      porcoes: 6,
+      tempo: 45,
+      ingredientes: ['Cebola', 'Azeite', 'Azeitona', 'Molho de tomate', 'Caldo de carne', 'Cenoura', 'Tomate', 'Macarrão', 'Carne moída']
     },
     {
       id: 7,
-      nome: 'arroz de brócolis',
-      tipo: 'salgado',
-      categoria: 'principal',
+      nome: 'Salada de frutas',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
       porcoes: 6,
-      tempo: 30,
-      ingredientes: ['arroz', 'alho', 'azeite', 'brócolis', 'bicarbonato de sódio', 'água', 'sal']
+      tempo: 10,
+      ingredientes: ['Leite condensado', 'Limão', 'Morango', 'Laranja', 'Kiwi', 'Manga', 'Frutas']
     },
     {
       id: 8,
-      nome: 'torta de limão',
-      tipo: 'doce',
-      categoria: 'sobremesa',
-      porcoes: 15,
-      tempo: 40,
-      ingredientes: ['biscoito de maisena', 'margarina', 'leite condensado', 'creme de leite', 'limão', 'ovo', 'acúcar']
+      nome: 'Lasanha de frango',
+      tipo: 'Salgado',
+      categoria: 'Principal',
+      porcoes: 4,
+      tempo: 45,
+      ingredientes: ['Frango', 'Queijo', 'Presunto', 'Massa de lasanha', 'Requeijão', 'Caldo de galinha', 'Leite', 'Creme de leite', 'Farinha', 'Manteiga', 'Cebola']
     },
     {
       id: 9,
-      nome: 'couve-flor gratinada',
-      tipo: 'salgado',
-      categoria: 'principal',
-      porcoes: 8,
-      tempo: 30,
-      ingredientes: ['couve-flor', 'requeijão', 'ovo', 'queijo', 'mussarela', 'cheiro-verde', 'tomate', 'margarina']
+      nome: 'Brigadeiro',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
+      porcoes: 30,
+      tempo: 25,
+      ingredientes: ['Leite condensado', 'Margarina', 'Chocolate em pó', 'Achocolatado', 'Chocolate granulado']
     },
     {
       id: 10,
-      nome: 'bolo de laranja',
-      tipo: 'doce',
-      categoria: 'sobremesa',
-      porcoes: 12,
-      tempo: 40,
-      ingredientes: ['ovo', 'açúcar', 'óleo', 'laranja', 'farinha de trigo', 'fermento']
+      nome: 'Arroz com brócolis',
+      tipo: 'Salgado',
+      categoria: 'Principal',
+      porcoes: 6,
+      tempo: 30,
+      ingredientes: ['Arroz', 'Alho', 'Azeite', 'Brócolis', 'Bicarbonato de sódio', 'Água', 'Sal']
     },
     {
       id: 11,
-      nome: 'salada de frutas especial',
-      tipo: 'doce',
-      categoria: 'entrada',
-      porcoes: 6,
-      tempo: 10,
-      ingredientes: ['leite condensado', 'limão', 'morango', 'laranja', 'kiwi', 'manga', 'frutas']
+      nome: 'Bolo de laranja',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
+      porcoes: 12,
+      tempo: 40,
+      ingredientes: ['Ovo', 'Açúcar', 'Óleo', 'Laranja', 'Farinha de trigo', 'Fermento']
     },
     {
       id: 12,
-      nome: 'curau de milho',
-      tipo: 'doce',
-      categoria: 'sobremesa',
+      nome: 'Curau de milho',
+      tipo: 'Doce',
+      categoria: 'Sobremesa',
       porcoes: 14,
       tempo: 15,
-      ingredientes: ['milho verde', 'açúcar', 'leite', 'amido de milho']
+      ingredientes: ['Milho', 'Açúcar', 'Leite', 'Amido de milho']
     },
     {
       id: 13,
-      nome: 'salada simples',
-      tipo: 'salgado',
-      categoria: 'entrada',
-      porcoes: 6,
+      nome: 'Couve-flor gratinada',
+      tipo: 'Salgado',
+      categoria: 'Entrada',
+      porcoes: 8,
       tempo: 30,
-      ingredientes: ['alface', 'cenoura', 'beterraba', 'tomate', 'cebola', 'sal', 'açúcar', 'azeite', 'vinagre']
+      ingredientes: ['Couve-flor', 'Requeijão', 'Ovo', 'Queijo', 'Mussarela', 'Cheiro-verde', 'Tomate', 'Margarina']
     },
     {
       id: 14,
-      nome: 'batata recheada',
-      tipo: 'salgado',
-      categoria: 'principal',
+      nome: 'Batata recheada',
+      tipo: 'Salgado',
+      categoria: 'Entrada',
       porcoes: 2,
       tempo: 30,
-      ingredientes: ['batata', 'sal', 'pimenta-do-reino', 'ovo', 'queijo', 'bacon', 'creme de leite', 'cebolinha']
+      ingredientes: ['Batata', 'Sal', 'Pimenta-do-reino', 'Ovo', 'Queijo', 'Bacon', 'Creme de leite', 'Cebolinha']
     },
     {
       id: 15,
-      nome: 'macarrão bolonhesa',
-      tipo: 'salgado',
-      categoria: 'principal',
-      porcoes: 6,
-      tempo: 45,
-      ingredientes: ['cebola', 'azeite', 'azeitona', 'molho de tomate', 'caldo de carne', 'cenoura', 'tomate', 'macarrão', 'carne moída']
-    }
+      nome: 'Esfiha de carne',
+      tipo: 'Salgado',
+      categoria: 'Lanche',
+      porcoes: 30,
+      tempo: 90,
+      ingredientes: ['Fermento', 'Açúcar', 'Sal', 'Leite', 'Água', 'Ovo', 'Farinha de trigo', 'Óleo', 'Carne moída', 'Tomate', 'Cebola', 'Alho', 'Azeitona', 'Noz moscada', 'Salsinha', 'Cebolinha', 'Molho de pimenta', 'Gema', 'Gergelim']
+    },
   ]
 
   public listaFiltrada: Receita[] = this.listaReceitas;
@@ -216,7 +216,7 @@ export class BuscaPage implements OnInit {
 
   public buscando(){
     if(this.textoBusca.length != 0 && this.textoBusca.trim().length != 0){
-      this.listaBusca = this.listaReceitas.filter(umaReceita => umaReceita.nome.includes(this.textoBusca.toLowerCase()));
+      this.listaBusca = this.listaReceitas.filter(umaReceita => umaReceita.nome.toLowerCase().includes(this.textoBusca.toLowerCase()));
       this.buscaAtivada = true;
     }else{
       this.listaBusca = [];

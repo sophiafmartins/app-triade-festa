@@ -1,25 +1,23 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
     <ion-title>
-      BUSCA
+      Busca
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content [fullscreen]="true">
+
+  <ion-searchbar placeholder="Buscar Receitas" [(ngModel)]="textoBusca" (ionChange)="buscando()"></ion-searchbar>
+  
   <ion-row>
-    <ion-col style="margin-left: 60%">
-      <ion-button fill="solid" style="margin-right: 8px" (click)="ordenarReceitas()">
-        A-Z
-      </ion-button>
-      
+    <ion-fab horizontal="end">
+      <ion-button fill="solid" (click)="ordenarReceitas()">A-Z</ion-button>
       <ion-button (click)="irParaFiltro()">
         <ion-icon slot="icon-only" name="filter"></ion-icon>
       </ion-button>
-    </ion-col>
+    </ion-fab>
   </ion-row>
-
-  <ion-searchbar placeholder="Buscar Receitas" showCancelButton="always" [(ngModel)]="textoBusca" (ionChange)="buscando()" ></ion-searchbar>
 
   <ion-list *ngIf="listaBusca.length; else vazioBusca">
     <app-card-receitas *ngFor="let r of listaBusca" [receita]="r"></app-card-receitas>
