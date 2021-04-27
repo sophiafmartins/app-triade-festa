@@ -1,37 +1,38 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Favoritos
+      Lista de Favoritos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-
-  <h2>Lista de Favoritos</h2>
-
+<ion-content>
   <div>
     <ion-list *ngIf="listaFavoritos.length; else vazioFavoritas">
       <ion-item *ngFor="let r of listaFavoritos">
 
+        
         <app-card-receitas [receita]="r"></app-card-receitas>
-
-        <ion-buttons slot="end" color="primary">
-          <ion-button fill="solid" (click)="removerFavorito(r)">
-            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
+        <ion-fab horizontal="end" vertical="bottom">
+          <ion-buttons>
+            <ion-button (click)="removerFavorito(r)">
+              <ion-icon size="large" name="trash-outline"></ion-icon>
+            </ion-button>
+             
+          </ion-buttons>
+        </ion-fab>   
+        
 
       </ion-item>
     </ion-list>
 
     <ng-template #vazioFavoritas>
-      <h3>Não há nenhuma receita adicionada como favorita</h3>
+      <h3>Não há nenhum item adicionado como favorito</h3>
 
       <ion-row>
         <ion-col class="ion-align-items-center" style="margin-left: 20%">
           <ion-button routerLink="/tabs/busca">
-            Adicionar Favoritos
+            Adicionar favoritos
           </ion-button>
         </ion-col>
       </ion-row>

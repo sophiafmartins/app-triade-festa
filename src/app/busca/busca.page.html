@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-searchbar placeholder="Buscar Receitas" [(ngModel)]="textoBusca" (ionChange)="buscando()"></ion-searchbar>
+  <ion-searchbar placeholder="Buscar receitas" [(ngModel)]="textoBusca" (ionChange)="buscando()"></ion-searchbar>
   
   <ion-row>
     <ion-fab horizontal="end">
@@ -24,7 +24,7 @@
   </ion-list>
 
   <ng-template #vazioBusca>
-    <ion-item>
+    <ion-item style="margin-top: 30px">
       <ion-label *ngIf="buscaAtivada">Nenhum resultado foi encontrado!!!</ion-label>
     </ion-item>
   </ng-template>

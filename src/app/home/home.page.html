@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Home
     </ion-title>
@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-content>
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar placeholder="Buscar"></ion-searchbar>
       <ion-list *ngFor="let r of listaReceitas">
           <app-card-receitas [receita]="r"></app-card-receitas>
       </ion-list>
