@@ -72,7 +72,9 @@ public editarEvento(umEvento){
             role: 'cancelar',
             handler: () => { return }
           }
-        ]
+        ],
+
+        cssClass: 'my-custom-modal-css'
       }
     );
 

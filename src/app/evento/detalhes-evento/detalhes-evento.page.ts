@@ -48,5 +48,4 @@ public meusEventos = [
     return await modal.present();
     this.modalCtrl.dismiss();
   }
-
 }

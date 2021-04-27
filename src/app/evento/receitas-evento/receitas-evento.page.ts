@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-receitas-evento',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReceitasEventoPage implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) {}
 
   ngOnInit() {
   }
@@ -38,4 +39,8 @@ export class ReceitasEventoPage implements OnInit {
     this.receitasEvento.splice(indice, 1)
   }
 
+  fecharReceitas(){
+    this.modalCtrl.dismiss();
+  }
+  
 }

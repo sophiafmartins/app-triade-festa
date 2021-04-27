@@ -4,33 +4,38 @@
       <ion-buttons>
         <ion-back-button slot="start"></ion-back-button>
       </ion-buttons>
-      <ion-title>Cadastr  o de evento</ion-title>
+      <ion-title>Cadastro de evento</ion-title>
     </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" color="secundary">
-  <div><h3></h3>
+<ion-content class="ion-padding">
+  <div>
     <ion-row>
       <h3>Nome</h3>
     </ion-row>
+    
     <ion-row> 
       <ion-input class="conteudoFormulario" type="text" placeholder="" [(ngModel)]="nomeEvento" month></ion-input>
     </ion-row>
+    
     <ion-row>
       <h3>Data</h3>
     </ion-row>
+    
     <ion-row>
       <ion-datetime class="conteudoFormulario" displayFormat="DD/MM/YYYY" [placeholder]="dataEvento" [(ngModel)]="dataEvento"></ion-datetime>
     </ion-row>
+    
     <ion-row>
       <h3>Nº de convidados </h3>
     </ion-row>
+    
     <ion-row>
       <ion-input class="conteudoFormulario" type="number" placeholder="" [(ngModel)]="qtdConvidados"></ion-input>
     </ion-row>
-          <ion-button expand="block" color="primary" fill="clear" class="conteudoFormulario" (click)="cadastrarEvento()">
-            <ion-icon class="icones" slot="icon-only" name="checkmark-outline"></ion-icon>
+          <ion-button color="warning" (click)="cadastrarEvento()">
+            Adicionar evento
           </ion-button>
   </div>
 </ion-content>

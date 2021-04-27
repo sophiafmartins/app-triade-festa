@@ -9,28 +9,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="secundary" class="ion-padding">
+<ion-content class="ion-padding">
   <div>
     <ion-row>
       <h3>Nome</h3>
     </ion-row>
     <ion-row>
-      <ion-label class="conteudoFormulario">{{evento.nomeEvento}}</ion-label>
+      <ion-input class="conteudoFormulario">{{evento.nomeEvento}}</ion-input>
     </ion-row>
     <ion-row>
       <h3>Data</h3>
     </ion-row>
     <ion-row>
-      <ion-label class="conteudoFormulario">{{evento.dataEvento}}</ion-label>
+      <ion-input class="conteudoFormulario">{{evento.dataEvento}}</ion-input>
     </ion-row>
     <ion-row>
       <h3>Nº de convidados</h3>
     </ion-row>
     <ion-row>
-      <ion-label class="conteudoFormulario">{{evento.qtdConvidados}}</ion-label>
+      <ion-input class="conteudoFormulario">{{evento.qtdConvidados}}</ion-input>
     </ion-row>
-          <ion-button color="primary" expand="block" fill="clear" class="conteudoFormulario" (click)="receitasAdicionadas()" >
-            <ion-icon class="icones" slot="icon-only" name="book-outline"></ion-icon>
+          <ion-button color="warning" (click)="receitasAdicionadas()" >
+            Receitas do evento
           </ion-button>
   </div>  
 </ion-content>

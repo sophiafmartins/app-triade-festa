@@ -6,37 +6,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div>
+<ion-content [fullscreen]="true">
+  <ion-content>
     <ion-list *ngIf="listaFavoritos.length; else vazioFavoritas">
       <ion-item *ngFor="let r of listaFavoritos">
-
         
         <app-card-receitas [receita]="r"></app-card-receitas>
-        <ion-fab horizontal="end" vertical="bottom">
-          <ion-buttons>
-            <ion-button (click)="removerFavorito(r)">
-              <ion-icon size="large" name="trash-outline"></ion-icon>
-            </ion-button>
-             
-          </ion-buttons>
-        </ion-fab>   
-        
 
+        <ion-buttons>
+          <ion-button (click)="removerFavorito(r)">
+            <ion-icon size="large" name="trash-outline"></ion-icon>
+          </ion-button>
+           
+        </ion-buttons>       
       </ion-item>
     </ion-list>
 
     <ng-template #vazioFavoritas>
-      <h3>Não há nenhum item adicionado como favorito</h3>
-
-      <ion-row>
-        <ion-col class="ion-align-items-center" style="margin-left: 20%">
-          <ion-button routerLink="/tabs/busca">
+      <ion-row class="ion-padding">
+        <ion-col>
+          <ion-label>Nenhum item foi adicionado como favorito!!!</ion-label>
+        </ion-col>
+      
+        <ion-col>
+          <ion-button color="warning" routerLink="/tabs/busca">
             Adicionar favoritos
           </ion-button>
         </ion-col>
       </ion-row>
+
     </ng-template>
-  </div>
+  </ion-content>
   
 </ion-content>
