@@ -41,6 +41,7 @@ public meusEventos = [
     const modal = await this.modalCtrl.create(
       {
         component: ReceitasEventoPage,
+        cssClass: 'my-custom-modal-css',
         swipeToClose: true
       }
     );

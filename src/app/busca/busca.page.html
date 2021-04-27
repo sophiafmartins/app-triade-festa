@@ -19,7 +19,7 @@
     </ion-fab>
   </ion-row>
 
-  <ion-list *ngIf="listaBusca.length; else vazioBusca">
+  <ion-list style="margin-top: 30px" *ngIf="listaBusca.length; else vazioBusca">
     <app-card-receitas *ngFor="let r of listaBusca" [receita]="r"></app-card-receitas>
   </ion-list>
 

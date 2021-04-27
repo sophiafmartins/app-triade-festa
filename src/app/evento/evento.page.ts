@@ -74,7 +74,7 @@ public editarEvento(umEvento){
           }
         ],
 
-        cssClass: 'my-custom-modal-css'
+        cssClass: 'my-custom-action-sheet-css'
       }
     );
 
