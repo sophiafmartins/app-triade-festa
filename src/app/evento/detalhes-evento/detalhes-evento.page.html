@@ -1,35 +1,35 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-row>
       <ion-buttons>
         <ion-back-button slot="start"></ion-back-button>
       </ion-buttons>
-      <ion-title>Detalhes do Evento</ion-title>
+      <ion-title>Detalhes do evento</ion-title>
     </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content color="secundary" class="ion-padding">
   <div>
     <ion-row>
-      <h3>Nome do evento:</h3>
+      <h3>Nome</h3>
     </ion-row>
     <ion-row>
-      <ion-label>{{evento.nomeEvento}}</ion-label>
+      <ion-label class="conteudoFormulario">{{evento.nomeEvento}}</ion-label>
     </ion-row>
     <ion-row>
-      <h3>Data do evento: </h3>
+      <h3>Data</h3>
     </ion-row>
     <ion-row>
-      <ion-label>{{evento.dataEvento}}</ion-label>
+      <ion-label class="conteudoFormulario">{{evento.dataEvento}}</ion-label>
     </ion-row>
     <ion-row>
-      <h3>Quantidade de convidados: </h3>
+      <h3>Nº de convidados</h3>
     </ion-row>
     <ion-row>
-      <ion-label>{{evento.qtdConvidados}}</ion-label>
+      <ion-label class="conteudoFormulario">{{evento.qtdConvidados}}</ion-label>
     </ion-row>
-          <ion-button expand="block" fill="clear" (click)="receitasAdicionadas()" >
+          <ion-button color="primary" expand="block" fill="clear" class="conteudoFormulario" (click)="receitasAdicionadas()" >
             <ion-icon class="icones" slot="icon-only" name="book-outline"></ion-icon>
           </ion-button>
   </div>  

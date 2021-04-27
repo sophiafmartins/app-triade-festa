@@ -7,12 +7,16 @@ div {
     height: 90%;
     width: 100%;
     padding-left: 5px;
-
 }
 
-ion-input {
+.conteudoFormulario {
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 0.1pt;
     font: 0.5em;
-    border: 0.3px solid rgba(0,0,0,0.3);
+    border: 0.8px solid orange;
+    border-radius: 15px;
+}
+
+h3 {
+    font-size: 1em;
 }

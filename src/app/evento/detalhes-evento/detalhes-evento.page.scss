@@ -7,11 +7,20 @@ div {
     height: 90%;
     width: 100%;
     padding-left: 5px;
-
 }
 
-ion-label {
+.conteudoFormulario {
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 0.1pt;
     font: 0.5em;
+    font-size: 10pt;
+    border: 0.8px solid orange;
+    border-radius: 15px;
+    padding-top: 7.0pt;
+    padding-left: 7pt;
+    padding-bottom: 7pt;
+}
+
+h3 {
+    font-size: 1em;
 }

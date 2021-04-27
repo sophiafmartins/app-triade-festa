@@ -1,27 +1,25 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Eventos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="secundary" class="ion-padding">
   <ion-list *ngIf="meusEventos.length != 0; else nenhumEvento">
     <ion-item *ngFor="let evento of meusEventos">
-      <ion-row>
-        <ion-col size="auto">
-          <ion-icon class="icones" name="bookmark-outline"></ion-icon>
-        </ion-col>
-        <ion-col>
-          <h3>{{evento.nomeEvento}}</h3>
-        </ion-col>
-        <ion-col size="auto">
-          <ion-button size="small" fill="clear" color="dark" (click)="opcoes(evento)  ">
-            <ion-icon class="icones" slot="icon-only" name="ellipsis-vertical"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
+      <ion-col size="auto">
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <h3>{{evento.nomeEvento}}</h3>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-button fill="clear" color="dark" (click)="opcoes(evento)">
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-col>
     </ion-item>
-    <ion-button expand="block" fill="clear" routerLink="./cadastro-evento">
+    <ion-button expand="block" fill="clear" color="primary" routerLink="./cadastro-evento">
       <ion-icon class="icones" name="add-outline"></ion-icon>
     </ion-button>
   </ion-list>
@@ -29,7 +27,7 @@
   <ng-template #nenhumEvento>
       <p class="textoCentral">Nenhum evento adicionado</p>
   
-      <ion-button class="posicaoBotaoSemEventos" expand="block" fill="clear" routerLink="./cadastro-evento">
+      <ion-button class="posicaoBotaoSemEventos" color="primary" expand="block" fill="clear" routerLink="./cadastro-evento">
         <ion-icon class="icones" name="add-outline"></ion-icon>
       </ion-button>
     </ng-template>

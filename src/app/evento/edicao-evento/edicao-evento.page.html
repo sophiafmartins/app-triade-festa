@@ -1,35 +1,35 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-row>
       <ion-buttons>
         <ion-back-button slot="start"></ion-back-button>
       </ion-buttons>
-      <ion-title>Editar Evento</ion-title>
+      <ion-title>Edição do evento</ion-title>
     </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content color="secundary" class="ion-padding">
   <div><h3></h3>
     <ion-row>
-      <h3>Nome do evento:</h3>
+      <h3>Nome</h3>
     </ion-row>
     <ion-row>
-      <ion-input type="text" placeholder="" [(ngModel)]="nomeEvento"></ion-input>
+      <ion-input class="conteudoFormulario" type="text" placeholder="" [(ngModel)]="nomeEvento"></ion-input>
     </ion-row>
     <ion-row>
-      <h3>Data do evento: </h3>
+      <h3>Data</h3>
     </ion-row>
     <ion-row>
-      <ion-datetime displayFormat="DD/MM/YYYY" [placeholder]="dataEvento" [(ngModel)]="dataEvento"></ion-datetime>
+      <ion-datetime class="conteudoFormulario" displayFormat="DD/MM/YYYY" [placeholder]="dataEvento" [(ngModel)]="dataEvento"></ion-datetime>
     </ion-row>
     <ion-row>
-      <h3>Quantidade de convidados: </h3>
+      <h3>Nº de convidados </h3>
     </ion-row>
     <ion-row>
-      <ion-input type="number" placeholder="" [(ngModel)]="qtdConvidados"></ion-input>
+      <ion-input class="conteudoFormulario" type="number" placeholder="" [(ngModel)]="qtdConvidados"></ion-input>
     </ion-row>
-          <ion-button expand="block" fill="clear" (click)="editarEvento()">
+          <ion-button color="primary" expand="block" fill="clear" class="conteudoFormulario" (click)="editarEvento()">
             <ion-icon class="icones" slot="icon-only" name="checkmark-outline"></ion-icon>
           </ion-button>
   </div>

@@ -17,19 +17,19 @@ export class ReceitasEventoPage implements OnInit {
       tituloReceita: 'Bolo de cenoura',
       imgReceita: 'assets/images/receita1.png',
       qtdReceita: 2,
-      urlReceita: '../receita1'
+      urlReceita: '../receitas/1'
     },
     {
       tituloReceita: 'Torta de Frango',
       imgReceita: 'assets/images/receita2.png',
       qtdReceita: 3,
-      urlReceita: ''
+      urlReceita: '../receitas/2'
     },
     {
       tituloReceita: 'Salada',
       imgReceita: 'assets/images/receita3.png',
       qtdReceita: 6,
-      urlReceita: ''
+      urlReceita: '../receitas/3'
     }
   ];
 

@@ -1,22 +1,22 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Minhas Receitas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="secundary" class="ion-padding">
   <ion-list>
     <ion-item *ngFor="let receita of receitasEvento">
-      <ion-row>
+      <ion-row class="molduraExterna">
         <ion-col size="4">
           <div class="colCard">
-            <img [src]="receita.imgReceita" [routerLink]="urlReceita" />
+            <img [src]="receita.imgReceita" />
           </div>
         </ion-col>
         <ion-col >
           <div class="colCard">
             <h4 class="tituloCol">Titulo:</h4>
-            <h4 class="subtituloCol">{{receita.tituloReceita}}</h4>
+            <h4 class="subtituloCol" [routerLink]="receita.urlReceita">{{receita.tituloReceita}}</h4>
             <h4 class="tituloCol">Quantidade:</h4>
             <h4 class="subtituloCol">{{receita.qtdReceita}}x</h4>
           </div>

@@ -41,10 +41,12 @@ public meusEventos = [
     const modal = await this.modalCtrl.create(
       {
         component: ReceitasEventoPage,
+        swipeToClose: true
       }
     );
 
     return await modal.present();
+    this.modalCtrl.dismiss();
   }
 
 }

@@ -1,13 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-type evento = {
-  id: number,
-  nomeEvento: string,
-  dataEvento: string,
-  qtdConvidados: number,
-  receitasEvento: []
-}
-
 interface modeloEvento {
   id: number,
   nomeEvento: string,
