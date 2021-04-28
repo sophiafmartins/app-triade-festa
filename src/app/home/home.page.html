@@ -8,9 +8,20 @@
 
 <ion-content [fullscreen]="true">
   <ion-content>
-    <ion-searchbar placeholder="Buscar"></ion-searchbar>
-      <ion-list *ngFor="let r of listaReceitas">
-          <app-card-receitas [receita]="r"></app-card-receitas>
-      </ion-list>
+    <ion-searchbar placeholder="Buscar" [(ngModel)]="textoBusca" (ionChange)="buscar()"></ion-searchbar>
+
+    <ion-list *ngIf="listaBusca.length; else vazioBusca">
+      <app-card-receitas *ngFor="let r of listaBusca" [receita]="r"></app-card-receitas>
+    </ion-list>
+  
+    <ng-template #vazioBusca>
+      <ion-item>
+        <ion-label *ngIf="buscaAtivada">Nenhum resultado foi encontrado!!!</ion-label>
+      </ion-item>
+    </ng-template>
+
+    <ion-list *ngIf="!listaBusca.length">
+        <app-card-receitas *ngFor="let r of listaReceitas" [receita]="r"></app-card-receitas>
+    </ion-list>
   </ion-content>
 </ion-content>
