@@ -62,7 +62,7 @@ export class BuscaPage implements OnInit {
       categoria: 'Sobremesa',
       porcoes: 50,
       tempo: 20,
-      ingredientes: ['Leite condensado', 'Manteiga', 'Coco ralado', 'Açúcar', 'Cravos-da-índia']
+      ingredientes: ['Leite condensado', 'Manteiga', 'Coco', 'Açúcar', 'Cravos-da-índia']
     },
     {
       id: 5,
