@@ -44,7 +44,7 @@ export class ReceitasService {
       categoria: 'Sobremesa',
       porcoes: 8,
       tempo: 40,
-      ingrdFiltro: ['Óleo', 'Cenoura', 'Ovo', 'Açúcar', 'Farinha de trigo', 'Fermento em pó', 'Manteiga', 'Chocolate em pó', 'Leite'],
+      ingrdFiltro: ['Óleo', 'Cenoura', 'Ovo', 'Açúcar', 'Farinha de trigo', 'Fermento em pó', 'Manteiga', 'Chocolate', 'Leite'],
       ingredientes: [
         {
           titulo: '',
@@ -680,7 +680,7 @@ export class ReceitasService {
       categoria: 'Sobremesa',
       porcoes: 30,
       tempo: 25,
-      ingrdFiltro: ['Leite condensado', 'Margarina', 'Chocolate em pó', 'Achocolatado', 'Chocolate granulado'],
+      ingrdFiltro: ['Leite condensado', 'Margarina', 'Chocolate', 'Achocolatado', 'Chocolate granulado'],
       ingredientes: [
         {
           titulo: '',
@@ -1210,39 +1210,70 @@ export class ReceitasService {
 
   ];
 
-  constructor(private storage: Storage) { 
+  private saveToStorage(){
+    this.storage.set("favoritos", this.listaFavoritos);
+  }
+
+  private async loadFromStorage(){
+    const loadedFavoritos = await this.storage.get("favoritos");
+    if(loadedFavoritos){
+      this.listaFavoritos.push(...loadedFavoritos);
+    }
+  }
+
+  constructor(private storage: Storage) {
     this.loadFromStorage();
   }
 
 
-  private saveToStorage(){
-    this.storage.set("receitas", this.receitas);
-  }
-
-  private async loadFromStorage(){
-    const loadedReceitas = await this.storage.get("receitas");
-    if(loadedReceitas){
-      this.receitas.push(...loadedReceitas);
-    }
-
-  }
+  public listaFavoritos: Receita[] = [];
 
   public getReceitaById(id: number){
     return { ...this.receitas.find(r => r.id === id) };
   }
 
-  public deleteReceitas(id: number){
-    const index = this.receitas.findIndex(r => r.id === id);
-    this.receitas.splice(index, 1);
+  public updateReceita(umaReceita: Receita){
+    const index = this.receitas.findIndex(r => r.id === umaReceita.id);
+    this.receitas[index] = umaReceita;
+  }
+
+  public updateFavorito(umaReceita: Receita){
+    const index = this.listaFavoritos.findIndex(f => f.id === umaReceita.id);
+    this.listaFavoritos[index] = umaReceita;
     this.saveToStorage();
   }
 
-  public statusFavoritos(id: number){
-    for(let r of this.receitas){
-      if(r.id === id){
-        r.favorito = !r.favorito;
+  public addFavorito(umaReceita: Receita){
+    this.listaFavoritos.push(umaReceita);
+    this.saveToStorage();
+  }
+
+  public deleteFavorito(umaReceita: Receita){
+    const i = this.listaFavoritos.findIndex(f => f.id === umaReceita.id);
+    this.listaFavoritos.splice(i, 1);
+    this.saveToStorage();
+  }
+
+
+  public updateListaFavoritos(umaReceita: Receita){
+    this.updateReceita(umaReceita);
+    const procurar = this.listaFavoritos.find(r => r.id === umaReceita.id);
+
+    if(procurar != null){
+      this.updateFavorito(umaReceita);
+    }
+
+    if(umaReceita.favorito === true){
+      if(procurar == null){
+        this.addFavorito(umaReceita);
+      }
+    }else if(umaReceita.favorito === false){
+      if(procurar != null){
+        this.deleteFavorito(umaReceita);
       }
     }
   }
+
+
 
 }

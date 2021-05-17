@@ -9,18 +9,23 @@ import { Receita, ReceitasService} from '../services/receitas.service';
   styleUrls: ['./receitas.page.scss'],
 })
 export class ReceitasPage implements OnInit {
-  
-  public receitas: Receita[] = this.receitaService.receitas;
-  
-  public receitaId: number;
-  public listaReceitas: Receita[] = this.receitas; 
 
+  public receita: Receita;
+
+  public receitaId: number;
 
   constructor(private route: ActivatedRoute, private receitaService: ReceitasService) { 
     this.receitaId = +route.snapshot.paramMap.get("id");
+    this.receita = receitaService.getReceitaById(this.receitaId);
   }
 
   ngOnInit() {
+  }
+
+  public clicandoBotaoFavorito(){
+    this.receita.favorito = !this.receita.favorito;
+    this.receitaService.updateListaFavoritos(this.receita);
+    
   }
 
 }
