@@ -19,7 +19,7 @@ export class FavoritosPage implements OnInit {
 
   public removerFavorito(umaReceita){
     umaReceita.favorito = false;
-    this.receitaService.updateListaFavoritos(umaReceita);
+    this.receitaService.atualizandoListaFavoritos(umaReceita);
 
   }
 
