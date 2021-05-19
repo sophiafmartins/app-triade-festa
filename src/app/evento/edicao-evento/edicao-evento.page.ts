@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-
-interface modeloEvento {
-  id: number,
-  nomeEvento: string,
-  dataEvento: string,
-  qtdConvidados: number,
-  receitasEvento: []
-};
+import { ToastController } from '@ionic/angular';
+import { EventosService, modeloEvento } from 'src/app/services/eventos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edicao-evento',
@@ -16,40 +11,68 @@ interface modeloEvento {
 })
 export class EdicaoEventoPage implements OnInit {
 
-public evento1 = {
-  id: 1,
-  nomeEvento: 'Aniversario',
-  dataEvento: '12/10/2021',
-  qtdConvidados: 12
+public evento: modeloEvento = {
+  id: 0,
+  nomeEvento: '',
+  dataEvento: '',
+  qtdConvidados: 0,
+  receitasEvento: []
 };
-public evento;
-public meusEventos = [];
-public nomeEvento: string = this.evento1.nomeEvento;
-  public dataEvento: string = this.evento1.dataEvento;
-  public qtdConvidados: number = this.evento1.qtdConvidados;
+public meusEventos = this.eventoLocal.meusEventos;
   
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private eventoLocal: EventosService, public toastCtrl: ToastController, public router: Router) {
     const eventoId: number = +route.snapshot.paramMap.get('id')
-    this.meusEventos.push(this.evento1);
-    this.evento = this.meusEventos.find(e => e.id === eventoId)
+    this.evento = {...this.meusEventos.find(e => e.id === eventoId)}
   }
 
   ngOnInit() {
   }
 
-  public editarEvento(){
-    this.evento.nomeEvento = this.nomeEvento;
-    this.evento.dataEvento = this.dataEvento;
-    this.evento.qtdConvidados = this.qtdConvidados;
-    
-    for(let evento of this.meusEventos){
-      if(evento.id == this.evento.id){
-        const indice = this.meusEventos.indexOf(evento);
-        this.meusEventos[indice] = this.evento;
-      
-        console.log(this.evento);
-      }
+  public async editarEvento(){
+    let toast;
+
+    if(this.evento.nomeEvento.trim().length == 0){
+      toast = await this.toastCtrl.create(
+        {
+          message: 'O campo Nome é obrigatório',
+          duration: 2000
+        }
+      )
     }
+    else if( this.evento.dataEvento.trim().length == 0){
+      toast = await this.toastCtrl.create(
+        {
+          message: 'O campo Data é obrigatório',
+          duration: 2000
+        }
+      )
+    }
+    else if( this.evento.qtdConvidados < 0){
+      toast = await this.toastCtrl.create(
+        {
+          message: 'O numero de convidados não pode ser negativo',
+          duration: 2000
+        }
+      )
+    }
+    else {
+      toast = await this.toastCtrl.create(
+        {
+          message: 'Alterações salvas com sucesso',
+          duration: 2000
+        }
+      )
+      
+      this.eventoLocal.edicaoEvento({...this.evento});
+  
+    this.evento.nomeEvento = '';
+    this.evento.dataEvento = '';
+    this.evento.qtdConvidados = 0;
+    this.evento.receitasEvento = [];
+    }
+
+    toast.present();
+    this.router.navigateByUrl('tabs/evento');
   }
 
 }

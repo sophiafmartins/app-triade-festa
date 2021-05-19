@@ -1,15 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { Router } from '@angular/router';
-
-
-interface modeloEvento {
-  id: number,
-  nomeEvento: string,
-  dataEvento: string,
-  qtdConvidados: number,
-  receitasEvento: []
-};
+import { EventosService } from 'src/app/services/eventos.service';
 
 @Component({
   selector: 'app-evento',
@@ -18,28 +10,20 @@ interface modeloEvento {
 })
 export class EventoPage implements OnInit {
 
-  constructor( public actionSheetCtrl: ActionSheetController,
-    public router: Router ) { }
+  constructor( public actionSheetCtrl: ActionSheetController, public router: Router, public eventoLocal: EventosService ) { }
 
   ngOnInit() {
   }
 
-  public meusEventos = [
-    {
-      id: 1,
-      nomeEvento: 'Aniversario',
-      dataEvento: '12/10/2021',
-      qtdConvidados: 15
-    }
-  ];
+  public meusEventos = this.eventoLocal.meusEventos;
   
-  
-  public removerEvento ( umEvento: modeloEvento ){
-    const indice = this.meusEventos.indexOf(umEvento);
-    this.meusEventos.splice(indice, 1);
+  public removerEvento ( umEvento ){
+    //const indice = this.meusEventos.indexOf(umEvento);
+    //this.meusEventos.splice(indice, 1);
+    this.eventoLocal.removerEvento(umEvento);
   }
 
-  public detalhesEvento(umEvento: modeloEvento){
+  public detalhesEvento(umEvento ){
     this.router.navigateByUrl("/detalhes-evento/"+umEvento.id);
   }
   
@@ -47,7 +31,7 @@ public editarEvento(umEvento){
   this.router.navigateByUrl('/edicao-evento/'+umEvento.id);
 }
 
-  public async opcoes (umEvento: modeloEvento) {
+  public async opcoes (umEvento ) {
     const actionSheet = await this.actionSheetCtrl.create(
       {
         header: 'Opções',

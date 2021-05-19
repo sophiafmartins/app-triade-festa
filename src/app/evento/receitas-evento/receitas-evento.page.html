@@ -10,20 +10,20 @@
 </ion-header>
 
 <ion-content color="secundary" class="ion-padding">
-  <ion-list>
-    <ion-item *ngFor="let receita of receitasEvento">
+  <ion-list *ngIf="meusEventos.receitasEvento.length != 0; else semReceitasAdicionadas">
+    <ion-item *ngFor="let receita of meusEventos.receitasEvento">
       <ion-row class="molduraExterna">
-        <ion-col size="4">
+        <ion-col size="4" (click)="navegarReceita(receita)">
           <div class="colCard">
             <img [src]="receita.imgReceita" />
           </div>
         </ion-col>
-        <ion-col >
+        <ion-col (click)="navegarReceita(receita)" >
           <div class="colCard">
             <h4 class="tituloCol">Titulo:</h4>
-            <h4 class="subtituloCol" [routerLink]="receita.urlReceita">{{receita.tituloReceita}}</h4>
+            <h4 class="subtituloCol">{{receita.tituloReceita}}</h4>
             <h4 class="tituloCol">Quantidade:</h4>
-            <h4 class="subtituloCol">{{receita.qtdReceita}}x</h4>
+            <h4 class="subtituloCol">{{receita.qtdNecessaria}}x</h4>
           </div>
         </ion-col>
         <ion-col size="auto">
@@ -36,4 +36,8 @@
       </ion-row>
     </ion-item>
    </ion-list>
-</ion-content>
+
+   <ng-template #semReceitasAdicionadas>
+    <ion-label>Nenhuma receita foi adicionada!!!</ion-label>
+  </ng-template>
+  </ion-content>

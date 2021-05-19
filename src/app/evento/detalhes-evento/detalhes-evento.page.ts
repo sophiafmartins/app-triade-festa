@@ -2,14 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ReceitasEventoPage } from '../receitas-evento/receitas-evento.page';
-
-interface modeloEvento {
-  id: number,
-  nomeEvento: string,
-  dataEvento: string,
-  qtdConvidados: number,
-  receitasEvento: []
-};
+import { EventosService } from 'src/app/services/eventos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalhes-evento',
@@ -18,21 +12,16 @@ interface modeloEvento {
 })
 export class DetalhesEventoPage implements OnInit {
 
-public evento;
-public meusEventos = [
-  {
-    id: 1,
-    nomeEvento: 'Aniversario',
-    dataEvento: '12/10/2021',
-    qtdConvidados: 15,
-    receitasEvento: []
-  }
-];
+public idEvento: number;
 
-  constructor(private router: ActivatedRoute, private modalCtrl: ModalController) {
-    const eventoId: number = +router.snapshot.paramMap.get('id')
-    this.evento = this.meusEventos.find(e => e.id === eventoId)
+  constructor(private router: ActivatedRoute, private modalCtrl: ModalController, private eventoLocal: EventosService, public route: Router) {
+    this.idEvento = +router.snapshot.paramMap.get('id')
+    this.evento = eventoLocal.getEventoById(this.idEvento);
    }
+
+  public evento;
+public meusEventos = this.eventoLocal.meusEventos;
+
 
   ngOnInit() {
   }
@@ -42,11 +31,21 @@ public meusEventos = [
       {
         component: ReceitasEventoPage,
         cssClass: 'my-custom-modal-css',
+        componentProps: {
+          'meusEventos': this.meusEventos.find(e => e.id === this.idEvento)
+        },
         swipeToClose: true
       }
     );
 
     return await modal.present();
     this.modalCtrl.dismiss();
+  
+  
+  
   }
+  public voltar(){
+    this.route.navigateByUrl('tabs/evento');
+  }
+
 }

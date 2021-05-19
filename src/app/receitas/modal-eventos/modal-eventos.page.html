@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Meus eventos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharEventos()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="meusEventos.length != 0; else nenhumEvento">
+    <ion-item *ngFor="let evento of meusEventos; let i = index">
+      <ion-col size="auto">
+        <ion-icon class="icones" name="bookmark-outline"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <h2>{{evento.nomeEvento}}</h2>
+      </ion-col>
+      <ion-col size="auto" *ngIf="!verificar(evento); else receitaLocalizada" >
+        <ion-button fill="clear" color="dark" (click)="incluirReceita(idReceita, evento)">
+          <ion-icon class="icones" name="add-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #nenhumEvento> 
+    <ion-label>Nenhum evento foi adicionado!!!</ion-label>
+  </ng-template>
+
+  <ng-template #receitaLocalizada>
+    <ion-col size="auto">
+      <ion-button fill="clear" color="dark">
+        <ion-icon class="icones" name="checkmark-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ng-template>
+</ion-content>

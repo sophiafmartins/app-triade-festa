@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: ':id',
     component: ReceitasPage
+  },  {
+    path: 'modal-eventos',
+    loadChildren: () => import('./modal-eventos/modal-eventos.module').then( m => m.ModalEventosPageModule)
   }
+
 ];
 
 @NgModule({

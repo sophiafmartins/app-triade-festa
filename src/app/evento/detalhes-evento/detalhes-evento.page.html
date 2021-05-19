@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-row>
       <ion-buttons>
-        <ion-back-button slot="start"></ion-back-button>
+        <ion-back-button slot="start" (click)="voltar()"></ion-back-button>
       </ion-buttons>
       <ion-title>Detalhes do evento</ion-title>
     </ion-row>
@@ -15,22 +15,22 @@
       <h3>Nome</h3>
     </ion-row>
     <ion-row>
-      <ion-input class="conteudoFormulario">{{evento.nomeEvento}}</ion-input>
+      <ion-input class="conteudoFormulario"><h4>{{evento.nomeEvento}}</h4></ion-input>
     </ion-row>
     <ion-row>
       <h3>Data</h3>
     </ion-row>
     <ion-row>
-      <ion-input class="conteudoFormulario">{{evento.dataEvento}}</ion-input>
+      <ion-input class="conteudoFormulario"><h4>{{evento.dataEvento | date: 'dd'}}/{{evento.dataEvento | date: 'MM'}}/{{evento.dataEvento | date: 'yyyy'}}</h4></ion-input>
     </ion-row>
     <ion-row>
       <h3>Nº de convidados</h3>
     </ion-row>
     <ion-row>
-      <ion-input class="conteudoFormulario">{{evento.qtdConvidados}}</ion-input>
+      <ion-input class="conteudoFormulario"><h4>{{evento.qtdConvidados}}</h4></ion-input>
     </ion-row>
           <ion-button color="warning" (click)="receitasAdicionadas()" >
             Receitas do evento
           </ion-button>
-  </div>  
+        </div>  
 </ion-content>

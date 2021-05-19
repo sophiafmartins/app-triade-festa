@@ -12,22 +12,22 @@
 <ion-content class="ion-padding">
   <div>
     <ion-row>
-      <h3>Nome</h3>
+      <h3>Nome *</h3>
     </ion-row>
     <ion-row>
-      <ion-input class="conteudoFormulario" type="text" placeholder="" [(ngModel)]="nomeEvento"></ion-input>
+      <ion-input class="conteudoFormulario" type="text" placeholder="evento.nomeEvento" [(ngModel)]="evento.nomeEvento"></ion-input>
     </ion-row>
     <ion-row>
-      <h3>Data</h3>
+      <h3>Data *</h3>
     </ion-row>
     <ion-row>
-      <ion-datetime min="2021" max="2030" class="conteudoFormulario" displayFormat="DD/MM/YYYY" [placeholder]="dataEvento" [(ngModel)]="dataEvento"></ion-datetime>
+      <ion-datetime min="2021" max="2030" class="conteudoFormulario" displayFormat="DD/MM/YYYY" [placeholder]="evento.dataEvento" [(ngModel)]="evento.dataEvento"></ion-datetime>
     </ion-row>
     <ion-row>
-      <h3>Nº de convidados </h3>
+      <h3>Nº de convidados * </h3>
     </ion-row>
     <ion-row>
-      <ion-input class="conteudoFormulario" type="number" placeholder="" [(ngModel)]="qtdConvidados"></ion-input>
+      <ion-input class="conteudoFormulario" type="number" placeholder="evento.qtdConvidados" [(ngModel)]="evento.qtdConvidados"></ion-input>
     </ion-row>
           <ion-button color="warning" (click)="editarEvento()"> 
             Confirmar
