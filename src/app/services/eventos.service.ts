@@ -100,9 +100,9 @@ export class EventosService {
     this.saveToStorage();
   }
 
-  public removerReceita( indiceReceita: number, indiceEvento: number ){
-    const buscaEvento = this.meusEventos.find(e => e.id === indiceEvento);
-    buscaEvento.receitasEvento.splice(indiceReceita, 1);
+  public removerReceita( umaReceita, umEvento ){
+    const receitaRecebida: number = umEvento.receitasEvento.indexOf(umaReceita);
+    umEvento.receitasEvento.splice(receitaRecebida, 1);
     this.saveToStorage();
   }
 

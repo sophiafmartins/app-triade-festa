@@ -20,9 +20,7 @@ export class ReceitasEventoPage implements OnInit {
   }
 
   public removerReceita( umaReceita ){
-    const indice = this.meusEventos.receitasEvento.indexOf(umaReceita);
-    this.meusEventos.receitasEvento.splice(indice, 1);
-    this.eventoLocal.removerReceita(umaReceita.id, this.meusEventos.id);
+    this.eventoLocal.removerReceita(umaReceita, this.meusEventos);
   }
 
   public fecharReceitas(){
