@@ -1,5 +1,7 @@
 {
   "name": "app-triade-festa",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
