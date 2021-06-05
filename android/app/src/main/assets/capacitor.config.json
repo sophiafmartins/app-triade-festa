@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "app-triade-festa",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
