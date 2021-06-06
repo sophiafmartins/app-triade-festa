@@ -27,7 +27,11 @@
     </ng-template>
 
     <ion-list *ngIf="(!listaBuscaReceitas.length) && (!listaBuscaInformes.length)">
+        <ion-title style="font-size: 30px">Dicas</ion-title>
         <app-card-informes *ngFor="let i of listaInformes" [informe]="i"></app-card-informes>
+
+        <br> <br>
+        <ion-title style="font-size: 30px">Receitas</ion-title>
         <app-card-receitas *ngFor="let r of listaReceitas" [receita]="r"></app-card-receitas>
     </ion-list>
   </ion-content>
