@@ -10,14 +10,14 @@ import { Receita, ReceitasService} from '../services/receitas.service';
 export class HomePage implements OnInit {
 
 
-  public receitas: Receita[] = this.receitaService.receitas;
+  public receitas = this.receitaService.receitas;
 
   constructor(private receitaService: ReceitasService) { }
 
   public buscaAtivada: boolean = false;
   public textoBusca: string;
-  public listaBusca: Receita[] = [];
-  public listaReceitas: Receita[] = this.receitas;
+  public listaBusca = [];
+  public listaReceitas = this.receitas;
     
 
   ngOnInit() {
@@ -25,7 +25,7 @@ export class HomePage implements OnInit {
 
   public buscar(){
     if(this.textoBusca.length != 0 && this.textoBusca.trim().length != 0){
-      this.listaBusca = this.listaReceitas.filter(umaReceita => umaReceita.nome.toLowerCase().includes(this.textoBusca.toLowerCase()));
+      this.listaBusca = this.listaReceitas.filter(umaReceita => umaReceita["nome"].toLowerCase().includes(this.textoBusca.toLowerCase()));
       this.buscaAtivada = true;
     }else{
       this.listaBusca = [];

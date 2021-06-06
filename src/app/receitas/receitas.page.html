@@ -7,7 +7,7 @@
       </ion-buttons>
     
       <ion-title>
-        {{receita.nome}}
+        {{receita["nome"]}}
       </ion-title>
      </ion-row>
   </ion-toolbar>
@@ -17,15 +17,15 @@
   <ion-content class="ion-padding">
     <div>
       <div>
-        <img class="imagem" [src]="'assets/images/receita'+(receita.id)+'.png'" [alt]="receita.nome">
+        <img class="imagem" [src]="'assets/images/receita'+(receita['id'])+'.png'" [alt]="receita['nome']">
         
         <ion-row>
-          <ion-card-subtitle>{{receita.porcoes}} porções - {{receita.tempo}} minutos</ion-card-subtitle>
+          <ion-card-subtitle>{{receita["porcoes"]}} porções - {{receita["tempo"]}} minutos</ion-card-subtitle>
           
           <ion-fab horizontal = "end">
             <ion-buttons>
-              <ion-button (click)="clicandoBotaoFavorito()" [color]="receita.favorito? 'primary' : '' ">
-                <ion-icon size="large" [name]="receita.favorito? 'heart' : 'heart-outline'"></ion-icon>
+              <ion-button (click)="clicandoBotaoFavorito()" [color]="receita['favorito']? 'primary' : '' ">
+                <ion-icon size="large" [name]="receita['favorito']? 'heart' : 'heart-outline'"></ion-icon>
               </ion-button>
 
               <ion-button (click)="abrirEventos()">
@@ -38,11 +38,11 @@
         
         
         <h2 style="color: brown;">Ingredientes:</h2>
-        <div *ngFor='let i of receita.ingredientes'>
-          <div *ngIf='i.descricao.length'>
-            <h5 style="color: #ec7e49;">{{i.titulo}}</h5>
+        <div *ngFor='let i of receita["ingredientes"]'>
+          <div *ngIf='i["descricao"].length'>
+            <h5 style="color: #ec7e49;">{{i["titulo"]}}</h5>
 
-            <div *ngFor='let d of i.descricao'>
+            <div *ngFor='let d of i["descricao"]'>
               <ion-checkbox style="margin-right: 5px;"></ion-checkbox>
               <ion-label>{{d}}</ion-label><br>
             </div>
@@ -50,10 +50,10 @@
         </div>
 
         <h2 style="color: brown;">Modo de preparo:</h2>
-        <div *ngFor='let i of receita.modoPreparo'>
-          <div *ngIf='i.descricao.length'>
-            <h5 style="color: #ec7e49;">{{i.titulo}}</h5>
-            <div *ngFor='let d of i.descricao'>
+        <div *ngFor='let i of receita["modoPreparo"]'>
+          <div *ngIf='i["descricao"].length'>
+            <h5 style="color: #ec7e49;">{{i["titulo"]}}</h5>
+            <div *ngFor='let d of i["descricao"]'>
               <p>{{d}}</p>
             </div>
           </div>

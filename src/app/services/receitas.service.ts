@@ -36,7 +36,7 @@ export interface Receita {
 })
 export class ReceitasService {
 
-  public receitas: Receita[];
+  public receitas;
   public rc;
 
 
@@ -99,16 +99,16 @@ export class ReceitasService {
   public listaFavoritos: Receita[] = [];
 
   public getReceitaById(id: number){
-    return { ...this.receitas.find(r => r.id === id) };
+    return { ...this.receitas.find(r => r["id"] === id) };
   }
 
   public atualizandoReceita(umaReceita: Receita){
-    const index = this.receitas.findIndex(r => r.id === umaReceita.id);
+    const index = this.receitas.findIndex(r => r["id"] === umaReceita.id);
     this.receitas[index] = umaReceita;
   }
 
   public atualizandoFavorito(umaReceita: Receita){
-    const index = this.listaFavoritos.findIndex(f => f.id === umaReceita.id);
+    const index = this.listaFavoritos.findIndex(f => f["id"] === umaReceita["id"]);
     this.listaFavoritos[index] = umaReceita;
     this.saveToStorage();
   }
@@ -119,7 +119,7 @@ export class ReceitasService {
   }
 
   public removendoFavorito(umaReceita: Receita){
-    const i = this.listaFavoritos.findIndex(f => f.id === umaReceita.id);
+    const i = this.listaFavoritos.findIndex(f => f["id"] === umaReceita["id"]);
     this.listaFavoritos.splice(i, 1);
     this.saveToStorage();
   }
@@ -127,17 +127,17 @@ export class ReceitasService {
 
   public atualizandoListaFavoritos(umaReceita: Receita){
     this.atualizandoReceita(umaReceita);
-    const procurar = this.listaFavoritos.find(r => r.id === umaReceita.id);
+    const procurar = this.listaFavoritos.find(r => r["id"] === umaReceita["id"]);
 
     if(procurar != null){
       this.atualizandoFavorito(umaReceita);
     }
 
-    if(umaReceita.favorito === true){
+    if(umaReceita["favorito"] === true){
       if(procurar == null){
         this.adicionandoFavorito(umaReceita);
       }
-    }else if(umaReceita.favorito === false){
+    }else if(umaReceita["favorito"] === false){
       if(procurar != null){
         this.removendoFavorito(umaReceita);
       }

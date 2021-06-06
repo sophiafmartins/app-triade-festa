@@ -18,7 +18,7 @@ export class FavoritosPage implements OnInit {
   }
 
   public removerFavorito(umaReceita){
-    umaReceita.favorito = false;
+    umaReceita["favorito"] = false;
     this.receitaService.atualizandoListaFavoritos(umaReceita);
 
   }
