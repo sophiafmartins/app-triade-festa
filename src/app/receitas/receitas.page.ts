@@ -27,7 +27,7 @@ export class ReceitasPage implements OnInit {
   }
 
   public clicandoBotaoFavorito(){
-    this.receita["favorito"] = !this.receita["favorito"];
+    this.receita.favorito = !this.receita.favorito;
     this.receitaService.atualizandoListaFavoritos(this.receita);
     
   }

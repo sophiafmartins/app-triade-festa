@@ -53,8 +53,8 @@ export class BuscaPage implements OnInit {
       this.filtroAtivado = true;
       for(let f of this.filtrosSelecionados){
         for(let r of this.listaReceitas){
-          for(let i=0; i < r["ingrdFiltro"].length; i++){
-            if(r["tipo"] === f["nome"] || r["categoria"] === f["nome"] || r["ingrdFiltro"][i] === f["nome"]){
+          for(let i=0; i < r.ingrdFiltro.length; i++){
+            if(r.tipo === f['nome'] || r.categoria === f['nome'] || r.ingrdFiltro[i] === f['nome']){
               if(!this.listaFiltrada.find(umaReceita => umaReceita === r)){
                 this.listaFiltrada.push(r);
               }
@@ -71,7 +71,7 @@ export class BuscaPage implements OnInit {
 
   public buscando(){
     if(this.textoBusca.length != 0 && this.textoBusca.trim().length != 0){
-      this.listaBusca = this.listaReceitas.filter(umaReceita => umaReceita["nome"].toLowerCase().includes(this.textoBusca.toLowerCase()));
+      this.listaBusca = this.listaReceitas.filter(umaReceita => umaReceita.nome.toLowerCase().includes(this.textoBusca.toLowerCase()));
       this.buscaAtivada = true;
     }else{
       this.listaBusca = [];
@@ -83,12 +83,12 @@ export class BuscaPage implements OnInit {
   public ordenarReceitas(){
     if(this.listaBusca.length){
       this.listaBusca.sort(function (a, b) {
-        return a["nome"] > b["nome"] ? 1 : ((b["nome"] > a["nome"]) ? -1 : 0);
+        return a.nome > b.nome ? 1 : ((b.nome > a.nome) ? -1 : 0);
       });
     }
     if(this.buscaAtivada === false){
       this.listaFiltrada.sort(function (a, b) {
-        return a["nome"] > b["nome"] ? 1 : ((b["nome"] > a["nome"]) ? -1 : 0);
+        return a.nome > b.nome ? 1 : ((b.nome > a.nome) ? -1 : 0);
       });
     }
   }
