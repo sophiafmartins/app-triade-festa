@@ -1,0 +1,11 @@
+<ion-card>
+  <ion-card-header>
+    <img class="imagem" [src]="'assets/images/informe'+(informe.id)+'.png'" [alt]="informe.nome">
+    <ion-card-title style="color: brown;">{{informe.nome}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <br><br>
+    <ion-button color="warning" [routerLink]="['/informes', informe.id]">Confira as dicas</ion-button>
+  </ion-card-content>
+</ion-card>

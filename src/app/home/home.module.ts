@@ -10,6 +10,9 @@ import { HomePage } from './home.page';
 
 import { CardReceitasComponent } from 'src/app/card-receitas/card-receitas.component';
 
+import { CardInformesComponent } from 'src/app/card-informes/card-informes.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +20,6 @@ import { CardReceitasComponent } from 'src/app/card-receitas/card-receitas.compo
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, CardReceitasComponent]
+  declarations: [HomePage, CardReceitasComponent, CardInformesComponent]
 })
 export class HomePageModule {}
