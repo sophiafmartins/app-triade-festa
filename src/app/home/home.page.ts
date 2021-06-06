@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Receita, ReceitasService} from '../services/receitas.service';
 
+import { Informe, InformesService} from '../services/informes.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -11,13 +13,17 @@ export class HomePage implements OnInit {
 
 
   public receitas: Receita[] = this.receitaService.receitas;
+  public informes: Informe[] = this.informeService.informes;
 
-  constructor(private receitaService: ReceitasService) { }
+
+  constructor(private receitaService: ReceitasService, private informeService: InformesService) { }
 
   public buscaAtivada: boolean = false;
   public textoBusca: string;
-  public listaBusca: Receita[] = [];
+  public listaBuscaReceitas: Receita[] = [];
+  public listaBuscaInformes: Informe[] = [];
   public listaReceitas: Receita[] = this.receitas;
+  public listaInformes: Informe[] = this.informes;
     
 
   ngOnInit() {
@@ -25,10 +31,14 @@ export class HomePage implements OnInit {
 
   public buscar(){
     if(this.textoBusca.length != 0 && this.textoBusca.trim().length != 0){
-      this.listaBusca = this.listaReceitas.filter(umaReceita => umaReceita.nome.toLowerCase().includes(this.textoBusca.toLowerCase()));
+      this.listaBuscaReceitas = this.listaReceitas.filter(umaReceita => umaReceita.nome.toLowerCase().includes(this.textoBusca.toLowerCase()));
+
+      this.listaBuscaInformes = this.listaInformes.filter(umInforme => umInforme.nome.toLowerCase().includes(this.textoBusca.toLowerCase()));
+
       this.buscaAtivada = true;
     }else{
-      this.listaBusca = [];
+      this.listaBuscaReceitas = [];
+      this.listaBuscaInformes = [];
       this.buscaAtivada = false;
     }
   }

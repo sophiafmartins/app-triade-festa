@@ -10,9 +10,15 @@
   <ion-content>
     <ion-searchbar placeholder="Buscar" [(ngModel)]="textoBusca" (ionChange)="buscar()"></ion-searchbar>
 
-    <ion-list *ngIf="listaBusca.length; else vazioBusca">
-      <app-card-receitas *ngFor="let r of listaBusca" [receita]="r"></app-card-receitas>
-    </ion-list>
+    <div *ngIf="(listaBuscaReceitas.length) || (listaBuscaInformes.length); else vazioBusca">
+      <ion-list *ngIf="listaBuscaReceitas.length">
+        <app-card-receitas *ngFor="let r of listaBuscaReceitas" [receita]="r"></app-card-receitas>
+      </ion-list>
+      <ion-list *ngIf="listaBuscaInformes.length">
+        <app-card-informes *ngFor="let i of listaInformes" [informe]="i"></app-card-informes>
+      </ion-list>
+    </div>
+    
   
     <ng-template #vazioBusca>
       <ion-item>
@@ -20,7 +26,8 @@
       </ion-item>
     </ng-template>
 
-    <ion-list *ngIf="!listaBusca.length">
+    <ion-list *ngIf="(!listaBuscaReceitas.length) && (!listaBuscaInformes.length)">
+        <app-card-informes *ngFor="let i of listaInformes" [informe]="i"></app-card-informes>
         <app-card-receitas *ngFor="let r of listaReceitas" [receita]="r"></app-card-receitas>
     </ion-list>
   </ion-content>
