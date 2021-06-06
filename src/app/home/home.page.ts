@@ -9,6 +9,7 @@ import { Receita, ReceitasService} from '../services/receitas.service';
 })
 export class HomePage implements OnInit {
 
+
   public receitas: Receita[] = this.receitaService.receitas;
 
   constructor(private receitaService: ReceitasService) { }
