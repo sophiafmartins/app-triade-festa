@@ -14,15 +14,19 @@ declare var google: any;
 export class LocalizacaoPage implements OnInit {
 
   constructor(private loadCtrl: LoadingController) {
-   }
+      this.getLocation();
+  }
 
    public latitude: number = 0;
    public longitude: number = 0;
 
    public async getLocation(){
-     const position = await Geolocation.getCurrentPosition();
-     this.latitude = position.coords.latitude;
-     this.longitude = position.coords.longitude;
+     await Geolocation.getCurrentPosition( {enableHighAccuracy: true, timeout: 5000, maximumAge: 0} ).then(resp => {
+       this.latitude = resp.coords.latitude;
+       this.longitude = resp.coords.longitude;
+     }).catch( err => {
+       console.log(err.message);
+     });
    }
 
   map: any;
@@ -51,7 +55,6 @@ export class LocalizacaoPage implements OnInit {
     const options = {
       center: location,
       zoom: 17,
-      disableDefaultUI: true 
     }
     this.map = new google.maps.Map( this.mapRef.nativeElement, options);
     this.addMarkerToMap(this.marker);
@@ -67,7 +70,6 @@ export class LocalizacaoPage implements OnInit {
   } 
   
   ngOnInit() {
-    this.getLocation();
     this.loadingMap();
   }
 
